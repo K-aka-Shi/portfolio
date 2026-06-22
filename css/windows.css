@@ -1,0 +1,151 @@
+/* windows.css — composant fenêtre + animations (animations étoffées en Phase 2) */
+
+.window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  min-height: 160px;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-window);
+  overflow: hidden;
+}
+
+.window.is-active {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* État maximisé : remplit la zone bureau */
+.window.is-maximized {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0;
+}
+
+/* ----- Barre de titre ----- */
+.window__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 12px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+  cursor: grab;
+  flex: 0 0 auto;
+}
+.window__titlebar:active {
+  cursor: grabbing;
+}
+
+/* Bouton retour (affiché uniquement sur mobile) */
+.window__back {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: var(--text);
+}
+.window__back:hover {
+  background: var(--hover-bg);
+}
+
+/* Contrôles façon macOS (3 pastilles à gauche) */
+.window__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.window__btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  line-height: 0;
+}
+.window__btn--close {
+  background: var(--ctl-close);
+}
+.window__btn--min {
+  background: var(--ctl-min);
+}
+.window__btn--max {
+  background: var(--ctl-max);
+}
+.window__btn:hover {
+  filter: brightness(1.12);
+}
+
+.window__title {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ----- Corps ----- */
+.window__body {
+  flex: 1 1 auto;
+  padding: 16px;
+  overflow: auto;
+  color: var(--text);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+/* ----- Poignée de redimensionnement (coin bas-droit) ----- */
+.window__resize {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+}
+.window.is-maximized .window__resize {
+  display: none;
+}
+
+/* Fenêtre minimisée : retirée de l'affichage, conservée en mémoire */
+.window.is-minimized {
+  display: none;
+}
+
+/* Animations ouverture / fermeture (scale + fade, ~200ms, ease-out) */
+@media (prefers-reduced-motion: no-preference) {
+  .window {
+    animation: window-open 0.2s ease-out;
+  }
+  .window.is-closing {
+    animation: window-close 0.15s ease-in forwards;
+    pointer-events: none;
+  }
+  @keyframes window-open {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes window-close {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+}

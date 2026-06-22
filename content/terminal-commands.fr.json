@@ -1,0 +1,56 @@
+{
+  "prompt": "nidal@portfolio:~$",
+  "welcome": [
+    "Nidal OS — terminal v1.0",
+    "Tape `help` pour voir les commandes disponibles."
+  ],
+  "commands": {
+    "help": { "desc": "Affiche cette aide", "action": "help" },
+    "whoami": {
+      "desc": "Qui suis-je",
+      "output": [
+        "Nidal LYASSAMI",
+        "Alternant Architecture logicielle & IA/automatisation — Würth France (WDS).",
+        "Homelabber, entrepreneur (SNEE / Blind Map), fondateur d'Eteint Play."
+      ]
+    },
+    "about": { "desc": "Ouvre l'app À propos", "action": "open:about" },
+    "projects": { "desc": "Liste les projets", "action": "projects" },
+    "skills": {
+      "desc": "Mes compétences techniques",
+      "output": [
+        "Langages     : Python, JavaScript, Dart, SQL",
+        "Frameworks   : FastAPI, Flask, Next.js / React, Flutter",
+        "Infra/DevOps : Docker, Proxmox, VPS, Nextcloud, SQLite",
+        "IA           : API Anthropic (Claude), intégration & automatisation"
+      ]
+    },
+    "contact": {
+      "desc": "Mes moyens de contact",
+      "output": [
+        "Email    : nidalyassami@gmail.com",
+        "LinkedIn : https://linkedin.com/in/nidal-lyassami",
+        "GitHub   : https://github.com/k-aka-shi"
+      ]
+    },
+    "cv": { "desc": "Ouvre / télécharge le CV", "action": "cv" },
+    "neofetch": { "desc": "Specs du système", "action": "neofetch" },
+    "clear": { "desc": "Efface l'écran", "action": "clear" },
+    "ls projects/": { "alias": "projects", "hidden": true },
+    "ls": { "alias": "projects", "hidden": true },
+    "sudo make-coffee": {
+      "hidden": true,
+      "output": [
+        "Permission denied: pas encore de café configuré sur ce système ☕"
+      ]
+    },
+    "cat outer_wilds.txt": {
+      "hidden": true,
+      "output": [
+        "« 14 minutes... puis tout recommence. »",
+        "Clin d'œil à Outer Wilds & Firewatch : explorer pour comprendre un système.",
+        "Ici, le système à explorer, c'est ce portfolio. Bonne boucle temporelle."
+      ]
+    }
+  }
+}

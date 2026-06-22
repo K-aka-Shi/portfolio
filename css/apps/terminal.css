@@ -1,0 +1,100 @@
+/* terminal.css — apparence de l'app Terminal (toujours sombre, façon shell). */
+.terminal {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  background: #0c100f;
+  color: #d6e2df;
+  font-family: var(--font-mono);
+  font-feature-settings: "liga" 0, "calt" 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.terminal__output {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal__line {
+  white-space: pre-wrap;
+}
+
+.terminal__muted {
+  color: #7c8b87;
+}
+.terminal__cmd {
+  color: #ffffff;
+}
+.terminal__error {
+  color: #ff9a8a;
+}
+
+/* Raccourcis (mobile) : éviter de tout taper au clavier virtuel. */
+.terminal__shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 4px;
+}
+.terminal__shortcuts[hidden] {
+  display: none;
+}
+.terminal__shortcuts-label {
+  color: #7c8b87;
+}
+.terminal__chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #d6e2df;
+  font: inherit;
+  cursor: pointer;
+}
+.terminal__chip:active {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.terminal__inputline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  /* Le champ reste visible au-dessus du clavier virtuel quand c'est exposé. */
+  padding-bottom: env(keyboard-inset-height, 0px);
+}
+.terminal__prompt {
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+.terminal__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font: inherit;
+  caret-color: var(--accent);
+}
+
+.terminal a {
+  color: #6fd6b6;
+}
+.terminal__link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #6fd6b6;
+  cursor: pointer;
+  text-align: left;
+}
+.terminal__link:hover {
+  text-decoration: underline;
+}

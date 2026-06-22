@@ -1,0 +1,100 @@
+/* theme.css — design system : variables, thèmes clair/sombre, typographie.
+ * Le thème est piloté par l'attribut [data-theme] sur <html> (défaut: dark).
+ * Le wallpaper reste sombre (tons emerald/nuit) dans les deux thèmes ;
+ * seules les surfaces (barres, dock, fenêtres) basculent clair/sombre. */
+
+:root {
+  /* ----- Tokens partagés (indépendants du thème) ----- */
+  --color-bg: #042f2e; /* wallpaper emerald-950, sombre dans les 2 thèmes */
+  --color-bg-2: #021110;
+  --label-on-wallpaper: #f1f4f3; /* labels d'icônes bureau (toujours sur fond sombre) */
+
+  --accent: #059669; /* emerald-600 */
+  --accent-strong: #047857; /* emerald-700 */
+
+  /* Contrôles fenêtre façon macOS */
+  --ctl-close: #ff5f57;
+  --ctl-min: #febc2e;
+  --ctl-max: #28c840;
+
+  /* Métriques */
+  --topbar-height: 36px;
+  --dock-height: 64px;
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  /* Typographie */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+
+  /* Échelle de tailles (façon OS) */
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 32px;
+}
+
+/* ----- Thème sombre (par défaut) ----- */
+:root,
+[data-theme="dark"] {
+  --surface: rgba(28, 31, 31, 0.82); /* glassmorphism anthracite */
+  --surface-solid: #1c1f1f;
+  --surface-2: #23272a;
+  --border: rgba(255, 255, 255, 0.08);
+  --hover-bg: rgba(255, 255, 255, 0.08);
+
+  --text: #e7eae9;
+  --text-muted: #9aa4a2;
+
+  --shadow-window: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ----- Thème clair ----- */
+[data-theme="light"] {
+  --surface: rgba(248, 250, 249, 0.78); /* glassmorphism clair */
+  --surface-solid: #f7f9f8;
+  --surface-2: #eceeed;
+  --border: rgba(0, 0, 0, 0.1);
+  --hover-bg: rgba(0, 0, 0, 0.06);
+
+  --text: #15201d; /* gris très foncé */
+  --text-muted: #5a6360;
+
+  --shadow-window: 0 18px 50px rgba(0, 0, 0, 0.3);
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* ----- Typographie monospace (terminal/code), ligatures désactivées ----- */
+code,
+pre,
+kbd,
+samp,
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
+/* Transition douce lors du switch de thème (hors reduced-motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .topbar,
+  .dock,
+  .window,
+  .window__titlebar,
+  .window__body {
+    transition: background-color 0.2s ease, color 0.2s ease,
+      border-color 0.2s ease;
+  }
+}
+
+/* Animations réduites demandées manuellement (Paramètres) : on coupe tout. */
+[data-reduce-motion="true"],
+[data-reduce-motion="true"] *,
+[data-reduce-motion="true"] *::before,
+[data-reduce-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}

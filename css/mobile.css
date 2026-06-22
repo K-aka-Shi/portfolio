@@ -1,0 +1,80 @@
+/* mobile.css — adaptation tactile (cf. 04-MOBILE.md).
+ * Piloté par body[data-mobile="true"] (posé par platform.js, réévalué au resize). */
+
+[data-mobile="true"] {
+  /* Sans blur (perf), on rend les surfaces opaques (fallback couleur pleine). */
+  --surface: var(--surface-solid);
+}
+
+/* ----- Bureau : grille d'icônes tactile ----- */
+[data-mobile="true"] .desktop__icons {
+  position: absolute;
+  inset: 18px 12px auto 12px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  justify-items: center;
+  gap: 14px 8px;
+}
+[data-mobile="true"] .desk-icon {
+  width: 100%;
+  max-width: 96px;
+}
+[data-mobile="true"] .desk-icon__glyph {
+  width: 44px;
+  height: 44px;
+}
+
+/* ----- Dock → barre de navigation fixe en bas ----- */
+[data-mobile="true"] .dock {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: none;
+  width: 100%;
+  gap: 0;
+  justify-content: space-around;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  padding: 6px 8px;
+  padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+[data-mobile="true"] .dock-item:hover {
+  transform: none; /* pas de scale au doigt */
+  background: transparent;
+}
+[data-mobile="true"] .dock-item:active {
+  background: var(--hover-bg);
+}
+
+/* ----- Fenêtres : plein écran, pas de drag/resize ----- */
+[data-mobile="true"] .windows-layer {
+  bottom: 62px; /* au-dessus de la barre de navigation */
+}
+[data-mobile="true"] .window {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0;
+  border: none;
+}
+[data-mobile="true"] .window__resize,
+[data-mobile="true"] .window__controls {
+  display: none;
+}
+[data-mobile="true"] .window__back {
+  display: inline-flex;
+}
+[data-mobile="true"] .window__titlebar {
+  cursor: default;
+}
+
+/* ----- Barre système simplifiée + perf (pas de blur) ----- */
+[data-mobile="true"] .topbar,
+[data-mobile="true"] .topbar__menu {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Nidal LYASSAMI",
+  "role": "Alternant — Architecture logicielle & IA / automatisation",
+  "intro": "Je ne suis pas juste un dev qui a fait des projets : je construis et je fais vivre mes propres systèmes, du homelab jusqu'à l'app entrepreneuriale.",
+  "blocks": [
+    {
+      "title": "Qui",
+      "text": "Alternant MAALSI (CESI Strasbourg), spécialisé en architecture logicielle & IA/automatisation, en alternance chez Würth France (unité WDS)."
+    },
+    {
+      "title": "Ce que je fais",
+      "text": "Je conçois et déploie des outils IA/automatisation en autonomie (WDS Track, WDS Copilote), je porte un projet entrepreneurial à impact social (Blind Map, SNEE) et je maintiens ma propre infra (Kloud, homelab Proxmox/VPS)."
+    },
+    {
+      "title": "En dehors du code",
+      "text": "Foot (5v5 le dimanche), jeux narratifs (Outer Wilds, Firewatch), et fondateur de l'association Eteint Play."
+    }
+  ]
+}

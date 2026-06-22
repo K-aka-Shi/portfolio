@@ -1,0 +1,19 @@
+{
+  "name": "Nidal LYASSAMI",
+  "role": "Work-study student — Software architecture & AI / automation",
+  "intro": "I'm not just a dev who shipped a few projects: I build and run my own systems, from the homelab to the entrepreneurial app.",
+  "blocks": [
+    {
+      "title": "Who",
+      "text": "Work-study MAALSI student (CESI Strasbourg), specialised in software architecture & AI/automation, on a work-study contract at Würth France (WDS unit)."
+    },
+    {
+      "title": "What I do",
+      "text": "I design and deploy AI/automation tools autonomously (WDS Track, WDS Copilote), I lead a social-impact entrepreneurial project (Blind Map, SNEE) and I run my own infrastructure (Kloud, Proxmox/VPS homelab)."
+    },
+    {
+      "title": "Outside the code",
+      "text": "Football (5-a-side on Sundays), narrative games (Outer Wilds, Firewatch), and founder of the Eteint Play association."
+    }
+  ]
+}

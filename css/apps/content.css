@@ -1,0 +1,184 @@
+/* content.css — styles des apps de contenu (Finder, À propos, Contact). */
+
+.app-loading {
+  color: var(--text-muted);
+}
+
+/* ----- Boutons génériques ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  transition: filter 0.15s ease, background 0.15s ease;
+}
+.btn:hover {
+  filter: brightness(1.08);
+  text-decoration: none;
+}
+.btn--primary {
+  background: var(--accent);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* ----- Finder / Projets ----- */
+.finder__hint,
+.contact__intro {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.finder__group {
+  margin: 18px 0 8px;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.finder__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.finder__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  color: var(--text);
+  transition: background 0.12s ease;
+}
+.finder__item:hover {
+  background: var(--hover-bg);
+}
+.finder__item-icon {
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+.finder__item-text {
+  display: flex;
+  flex-direction: column;
+}
+.finder__item-title {
+  font-weight: 500;
+}
+.finder__item-pitch {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* ----- Fiche projet ----- */
+.project__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: var(--fs-sm);
+}
+.project__back:hover {
+  text-decoration: underline;
+}
+.project__title {
+  font-size: var(--fs-xl);
+  margin-bottom: 4px;
+}
+.project__pitch {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.project__section {
+  margin-bottom: 14px;
+}
+.project__section-title {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.project__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.project__stack li {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: var(--fs-xs);
+}
+
+/* ----- À propos ----- */
+.about__name {
+  font-size: var(--fs-xl);
+  margin-bottom: 2px;
+}
+.about__role {
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.about__intro {
+  margin-bottom: 16px;
+}
+.about__block {
+  margin-bottom: 14px;
+}
+.about__block-title {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.about__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* ----- Contact ----- */
+.contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+}
+.contact__link:hover {
+  filter: brightness(1.08);
+  text-decoration: none;
+}
+.contact__link-icon {
+  color: var(--accent);
+}
+.contact__link-text {
+  display: flex;
+  flex-direction: column;
+}
+.contact__link-label {
+  font-weight: 500;
+}
+.contact__link-value {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}

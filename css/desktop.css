@@ -1,0 +1,291 @@
+/* desktop.css — bureau, barre système, icônes, dock */
+
+/* ----- Bureau ----- */
+.desktop {
+  position: fixed;
+  inset: var(--topbar-height) 0 0 0;
+  overflow: hidden;
+  /* Wallpaper sobre : dégradé emerald/nuit + quelques étoiles très discrètes
+     (clin d'œil Outer Wilds), entièrement en CSS = aucun asset lourd. */
+  background-color: var(--color-bg-2);
+  background-image: radial-gradient(
+      1px 1px at 18% 28%,
+      rgba(255, 255, 255, 0.22),
+      transparent
+    ),
+    radial-gradient(1px 1px at 72% 18%, rgba(255, 255, 255, 0.16), transparent),
+    radial-gradient(1px 1px at 42% 62%, rgba(255, 255, 255, 0.14), transparent),
+    radial-gradient(1px 1px at 86% 70%, rgba(255, 255, 255, 0.18), transparent),
+    radial-gradient(1px 1px at 30% 84%, rgba(255, 255, 255, 0.12), transparent),
+    radial-gradient(
+      120% 120% at 50% 0%,
+      var(--color-bg) 0%,
+      var(--color-bg-2) 100%
+    );
+}
+
+/* Couche des fenêtres (positionnement absolu des fenêtres dedans) */
+.windows-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none; /* les fenêtres réactivent les events */
+}
+.windows-layer > * {
+  pointer-events: auto;
+}
+
+/* ----- Icônes de bureau ----- */
+.desktop__icons {
+  position: absolute;
+  inset: 16px auto auto 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 84px);
+  grid-auto-rows: 92px;
+  gap: 8px;
+  z-index: 0;
+}
+
+.desk-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 84px;
+  padding: 8px 4px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: background 0.12s ease;
+}
+.desk-icon:hover,
+.desk-icon:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+.desk-icon__glyph {
+  width: 40px;
+  height: 40px;
+  color: var(--label-on-wallpaper); /* sur wallpaper sombre dans les 2 thèmes */
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+.desk-icon__glyph svg {
+  width: 100%;
+  height: 100%;
+}
+.desk-icon__label {
+  font-size: var(--fs-xs);
+  color: var(--label-on-wallpaper); /* lisible quel que soit le thème (wallpaper sombre) */
+  line-height: 1.2;
+  word-break: break-word;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* ----- Barre système (haut) ----- */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-sm);
+  z-index: 1000;
+}
+.topbar__left,
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.topbar__left {
+  position: relative;
+}
+.topbar__brand {
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+}
+.topbar__brand:hover,
+.topbar__brand[aria-expanded="true"] {
+  background: var(--hover-bg);
+}
+.topbar__clock {
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+/* Bouton icône (toggle thème) */
+.topbar__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: var(--text);
+}
+.topbar__icon-btn:hover {
+  background: var(--hover-bg);
+}
+
+/* Bouton bascule de langue (texte FR/EN) */
+.topbar__lang {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.topbar__lang:hover {
+  background: var(--hover-bg);
+}
+
+/* Menu déroulant « Nidal OS » */
+.topbar__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+.topbar__menu[hidden] {
+  display: none;
+}
+.topbar__menu a {
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+.topbar__menu a:hover {
+  background: var(--hover-bg);
+  text-decoration: none;
+}
+
+/* ----- Dock (bas) ----- */
+.dock {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  z-index: 900;
+}
+.dock-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--text);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.dock-item svg {
+  width: 26px;
+  height: 26px;
+  margin: auto;
+}
+.dock-item:hover {
+  transform: scale(1.15);
+  background: var(--hover-bg);
+}
+/* Point sous l'icône d'une app ouverte */
+.dock-item[data-open="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ----- Easter eggs ----- */
+/* Étoile discrète planquée sur le wallpaper */
+.egg-ember {
+  position: absolute;
+  top: 38%;
+  right: 7%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+  opacity: 0.4;
+  z-index: 0;
+}
+.egg-ember:hover,
+.egg-ember:focus-visible {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .egg-ember {
+    animation: egg-twinkle 3.5s ease-in-out infinite;
+  }
+  @keyframes egg-twinkle {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+}
+
+/* Toast (message des easter eggs) */
+.egg-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--dock-height) + 28px);
+  transform: translateX(-50%) translateY(8px);
+  max-width: min(420px, 86vw);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 2000;
+}
+.egg-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

@@ -1,0 +1,53 @@
+{
+  "projects": [
+    {
+      "id": "kloud",
+      "title": "Kloud",
+      "category": "tech",
+      "pitch": "Self-hosted AI platform with per-user quotas.",
+      "problem": "Centralise and control access to AI (Claude) for the family, with per-user quotas, without depending on individual paid accounts for everyone.",
+      "architecture": "Web platform: Next.js frontend, FastAPI backend, JWT authentication, Claude API integration.",
+      "stack": ["Next.js / React", "FastAPI (Python)", "JWT", "Anthropic API (Claude)", "Docker", "VPS"],
+      "result": "Functional self-hosted platform, fine-grained per-user quota management, architecture reusable for other AI use cases."
+    },
+    {
+      "id": "wds-track",
+      "title": "WDS Track",
+      "category": "tech",
+      "pitch": "Field-visit tracking via QR codes.",
+      "problem": "Track Würth (WDS) sales reps' field visits in a simple, traceable way, without a heavy tool imposed by IT.",
+      "architecture": "Web app generating and scanning QR codes to check in visits, with a lightweight database.",
+      "stack": ["Flask", "SQLite", "Render (VPS migration considered)"],
+      "result": "Tool deployed and used internally, designed and maintained autonomously outside the standard IT pipeline — proof of an ability to ship fast within a constrained large-group context."
+    },
+    {
+      "id": "wds-copilote",
+      "title": "WDS Copilote",
+      "category": "tech",
+      "pitch": "WhatsApp chatbot for the WDS team.",
+      "problem": "Provide a conversational contact point (WhatsApp) for the WDS team's everyday needs, without a dedicated frontend.",
+      "architecture": "WhatsApp Business chatbot connected to a backend API.",
+      "stack": ["FastAPI (Python)", "WhatsApp Cloud API (360dialog)"],
+      "result": "Working proof of concept of a professional conversational channel, foundation for a future AI customer chatbot (under RSSI/IT validation with the Claude API)."
+    },
+    {
+      "id": "blind-map",
+      "title": "Blind Map",
+      "category": "tech",
+      "pitch": "Indoor voice navigation for visually impaired people.",
+      "problem": "Help visually impaired people move around indoors (public buildings, etc.) where classic GPS doesn't work.",
+      "architecture": "Mobile app for indoor voice navigation.",
+      "stack": ["Flutter (mobile)", "to be completed as the project progresses"],
+      "result": "Project carried under the French National Student-Entrepreneur Status (SNEE), 2026-2027 application via Pépite Etena — high social-impact project, in entrepreneurial structuring phase."
+    },
+    {
+      "id": "eteint-play",
+      "title": "Eteint Play",
+      "category": "autres",
+      "pitch": "Student association — football tournaments (ELT format).",
+      "problem": "Create a unifying, well-organised event for the student community.",
+      "architecture": "Student association organising football tournaments in the ELT format, with several editions held.",
+      "result": "Proof of project-management, organisation and leadership skills, outside a purely technical context — a good human counterpoint to the rest of the portfolio."
+    }
+  ]
+}
