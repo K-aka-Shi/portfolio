@@ -110,13 +110,96 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-top: 8px;
 }
-.project__stack li {
+.project__stack li,
+.project__stack span {
   padding: 3px 8px;
   border-radius: 999px;
   background: var(--surface-2);
   border: 1px solid var(--border);
   font-size: var(--fs-xs);
+}
+
+/* En-têtes (titre + statut) */
+.finder__space {
+  margin-bottom: 6px;
+}
+.finder__item-head,
+.project__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.project__head {
+  margin-bottom: 4px;
+}
+
+/* Badge de statut */
+.status {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.status.is-op {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+.status.is-dev {
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+.status.is-maint {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+.status.is-idea {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.12);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+.status.is-pause,
+.status.is-archive {
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+/* Volet « sous le capot » */
+.project__hood {
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.project__hood summary {
+  cursor: pointer;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  list-style: none;
+}
+.project__hood summary::-webkit-details-marker {
+  display: none;
+}
+.project__hood summary::before {
+  content: "+ ";
+}
+.project__hood[open] summary::before {
+  content: "− ";
+}
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 /* ----- À propos ----- */

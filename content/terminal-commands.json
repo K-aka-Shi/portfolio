@@ -1,7 +1,7 @@
 {
   "prompt": "nidal@portfolio:~$",
   "welcome": [
-    "Nidal OS — terminal v1.0",
+    "Atelier · terminal v1.0",
     "Tape `help` pour voir les commandes disponibles."
   ],
   "commands": {
@@ -10,7 +10,7 @@
       "desc": "Qui suis-je",
       "output": [
         "Nidal LYASSAMI",
-        "Alternant Architecture logicielle & IA/automatisation — Würth France (WDS).",
+        "Alternant architecture logicielle & IA/automatisation, Würth France (WDS).",
         "Homelabber, entrepreneur (SNEE / Blind Map), fondateur d'Eteint Play."
       ]
     },

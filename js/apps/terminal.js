@@ -5,19 +5,17 @@
 import { windowManager } from "../windowManager.js";
 import { APPS } from "./registry.js";
 import { loadProjects } from "./finder.js";
-import { getLang, t } from "../i18n.js";
+import { t } from "../i18n.js";
 import { isMobile } from "../platform.js";
 
-const configCache = {};
+let config = null;
 
-async function loadConfig(lang = getLang()) {
-  if (configCache[lang]) return configCache[lang];
-  let res = await fetch(`content/terminal-commands.${lang}.json`);
-  if (!res.ok && lang !== "fr")
-    res = await fetch("content/terminal-commands.fr.json");
+async function loadConfig() {
+  if (config) return config;
+  const res = await fetch("content/terminal-commands.json");
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  configCache[lang] = await res.json();
-  return configCache[lang];
+  config = await res.json();
+  return config;
 }
 
 function escapeHtml(s) {
@@ -42,10 +40,10 @@ function linkify(text) {
 
 const NEOFETCH = [
   "   ╔════════════╗",
-  "   ║  Nidal OS  ║   nidal@portfolio",
+  "   ║  Atelier   ║   nidal@portfolio",
   "   ╚════════════╝   -----------------",
-  "                    OS      : Nidal OS (web edition)",
-  "                    Host    : homelab — Proxmox / VPS",
+  "                    OS      : Atelier (édition web)",
+  "                    Host    : homelab · Proxmox / VPS",
   "                    Shell   : vanilla-js",
   "                    Uptime  : depuis 2024, et ça tourne",
   "                    Stack   : Python · FastAPI · Next.js · Flutter · Docker",
@@ -123,7 +121,7 @@ export async function render(container) {
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "terminal__link";
-      btn.textContent = `→ ${p.title} — ${p.pitch || ""}`;
+      btn.textContent = `→ ${p.title} : ${p.pitch || ""}`;
       btn.addEventListener("click", () =>
         windowManager.open("finder", { projectId: p.id })
       );
@@ -171,7 +169,7 @@ export async function render(container) {
       appendLine(
         `command not found: ${escapeHtml(
           cmd.split(" ")[0]
-        )} — tape \`help\` pour la liste des commandes`,
+        )}, tape \`help\` pour la liste des commandes`,
         "terminal__error"
       );
     } else if (entry.action) {

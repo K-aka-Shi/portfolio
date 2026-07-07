@@ -1,0 +1,39 @@
+{
+  "name": "Nidal LYASSAMI",
+  "hook": "Dev IA & Automatisation",
+  "tagline": "Je construis des systèmes qui tournent sans moi.",
+  "hint": "Descends, ça se réchauffe.",
+  "story": [
+    {
+      "num": "01",
+      "title": "Le déclic",
+      "text": "Gamin, je passais déjà mes journées sur le PC. Au départ je voulais faire du graphisme et du motion design, des affiches, ce genre de choses. Et puis un jour je tombe sur OpenClassrooms, une page HTML et CSS, et ça a fait tilt. Le code, c'était ça."
+    },
+    {
+      "num": "02",
+      "title": "Voir les gens s'en servir",
+      "text": "Ce qui me régale, ce n'est pas d'aligner des lignes de code. C'est de voir les gens utiliser ce que je fais. Mes petits outils en alternance, quand quelqu'un s'en sert vraiment au quotidien, il n'y a pas plus satisfaisant."
+    },
+    {
+      "num": "03",
+      "title": "Orchestrer, pas juste coder",
+      "text": "Avec le temps, j'ai arrêté de vouloir tout écrire à la main. Aujourd'hui j'orchestre, je fais construire, je teste à fond avec l'IA. Ce qui me plaît vraiment, c'est d'extraire la valeur d'un process et de le voir tourner tout seul, sans avoir besoin de moi."
+    },
+    {
+      "num": "04",
+      "title": "Chez moi, je garde la main",
+      "text": "En dehors du travail, je construis des trucs pour voir jusqu'où je peux aller seul. J'héberge ma propre infra, un homelab qui ronronne à la maison, et je garde le contrôle de mes données. L'autonomie et l'open source, pour moi c'est une conviction."
+    },
+    {
+      "num": "05",
+      "title": "Premiers pas d'entrepreneur",
+      "text": "Avec Blind Map, j'ai mis un pied dans l'entrepreneuriat : une app pour aider les personnes aveugles à faire leurs courses en autonomie. Je l'ai portée à fond, jusqu'en finale. Et à côté, il y a Eteint Play, mon asso de tournois de foot, sûrement le projet qui me résume le mieux."
+    },
+    {
+      "num": "06",
+      "title": "Le fil rouge",
+      "text": "Au fond, ce qui m'anime, c'est d'explorer un système pour le comprendre (les joueurs d'Outer Wilds voient de quoi je parle) et de devenir, jour après jour, une meilleure version de moi."
+    }
+  ],
+  "closing": "Voilà, tu as fait le tour de l'atelier. Si le courant passe, on continue la discussion ?"
+}

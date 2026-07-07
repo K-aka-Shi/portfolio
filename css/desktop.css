@@ -5,23 +5,21 @@
   position: fixed;
   inset: var(--topbar-height) 0 0 0;
   overflow: hidden;
-  /* Wallpaper sobre : dégradé emerald/nuit + quelques étoiles très discrètes
-     (clin d'œil Outer Wilds), entièrement en CSS = aucun asset lourd. */
+  /* Atelier de nuit : lueur de lampe chaude + quelques étoiles tièdes (clin d'œil
+     Outer Wilds) + motif zellige très discret. 100 % CSS, aucun asset lourd. */
   background-color: var(--color-bg-2);
   background-image: radial-gradient(
-      1px 1px at 18% 28%,
-      rgba(255, 255, 255, 0.22),
-      transparent
+      55% 45% at 82% 12%,
+      var(--glow-warm),
+      transparent 70%
     ),
-    radial-gradient(1px 1px at 72% 18%, rgba(255, 255, 255, 0.16), transparent),
-    radial-gradient(1px 1px at 42% 62%, rgba(255, 255, 255, 0.14), transparent),
-    radial-gradient(1px 1px at 86% 70%, rgba(255, 255, 255, 0.18), transparent),
-    radial-gradient(1px 1px at 30% 84%, rgba(255, 255, 255, 0.12), transparent),
-    radial-gradient(
-      120% 120% at 50% 0%,
-      var(--color-bg) 0%,
-      var(--color-bg-2) 100%
-    );
+    radial-gradient(1px 1px at 18% 28%, rgba(243, 237, 225, 0.22), transparent),
+    radial-gradient(1px 1px at 72% 20%, rgba(243, 237, 225, 0.14), transparent),
+    radial-gradient(1px 1px at 40% 74%, rgba(243, 237, 225, 0.12), transparent),
+    url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='80'%20height='80'%20viewBox='0%200%2080%2080'%3E%3Cg%20fill='none'%20stroke='%23e0995e'%20stroke-width='1.2'%20opacity='0.05'%3E%3Crect%20x='20'%20y='20'%20width='40'%20height='40'/%3E%3Crect%20x='20'%20y='20'%20width='40'%20height='40'%20transform='rotate(45%2040%2040)'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(120% 120% at 50% 100%, var(--color-bg) 0%, var(--color-bg-2) 100%);
+  background-size: cover, auto, auto, auto, 80px 80px, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat;
 }
 
 /* Couche des fenêtres (positionnement absolu des fenêtres dedans) */
@@ -240,9 +238,9 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
-  opacity: 0.4;
+  background: var(--accent-warm);
+  box-shadow: 0 0 8px rgba(224, 153, 94, 0.6);
+  opacity: 0.45;
   z-index: 0;
 }
 .egg-ember:hover,

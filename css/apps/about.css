@@ -1,0 +1,134 @@
+/* about.css — récit scrollé « À propos » (l'atelier qui s'allume). */
+
+.story {
+  position: relative;
+  --warmth: 0.12;
+  color: var(--text);
+}
+
+/* Feu de camp : lueur chaude épinglée en bas du champ de vision, dont
+   l'intensité suit --warmth (pilotée au scroll par about.js). */
+.story__ambient {
+  position: sticky;
+  bottom: 0;
+  height: 0;
+  z-index: 0;
+}
+.story__ambient::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45vh;
+  pointer-events: none;
+  background: radial-gradient(
+    70% 100% at 50% 100%,
+    rgba(224, 153, 94, 0.5),
+    transparent 72%
+  );
+  opacity: var(--warmth);
+  transition: opacity 0.4s ease;
+}
+
+.story__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 40px 28px 64px;
+}
+
+/* Hero */
+.story__hero {
+  min-height: 66vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.story__hook {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.story__name {
+  font-size: clamp(28px, 6vw, 44px);
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+.story__tagline {
+  font-size: var(--fs-lg);
+  color: var(--text);
+}
+.story__hint {
+  margin-top: 28px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.story__chevron {
+  display: inline-block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .story__chevron {
+    animation: story-chev 1.6s ease-in-out infinite;
+  }
+  @keyframes story-chev {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+  }
+}
+
+/* Chapitres */
+.chapter {
+  margin-bottom: 22vh;
+}
+.story__hero.chapter {
+  margin-bottom: 10vh;
+}
+.story__end {
+  margin-bottom: 6vh;
+}
+.chapter__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--accent-warm);
+}
+.chapter__title {
+  font-size: var(--fs-xl);
+  margin: 6px 0 12px;
+}
+.chapter__text {
+  font-size: var(--fs-md);
+  line-height: 1.7;
+}
+
+/* Révélation au scroll (le hero reste visible d'emblée) */
+@media (prefers-reduced-motion: no-preference) {
+  .chapter:not(.story__hero) {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .chapter.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clôture */
+.story__closing {
+  font-size: var(--fs-lg);
+  margin-bottom: 20px;
+}
+.story__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

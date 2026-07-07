@@ -70,11 +70,11 @@ export function render(container) {
     try {
       const repo = await fetchLatestRepo();
       if (repo) {
-        ghEl.innerHTML = `<a href="${repo.url}" target="_blank" rel="noopener">${repo.name}</a> — ${t(
+        ghEl.innerHTML = `<a href="${repo.url}" target="_blank" rel="noopener">${repo.name}</a>, ${t(
           "monitor.pushedOn"
         )} ${fmtDate(repo.pushedAt)}`;
       } else {
-        ghEl.textContent = "—";
+        ghEl.textContent = "aucune donnée";
       }
     } catch (err) {
       console.warn("[monitor] GitHub", err);

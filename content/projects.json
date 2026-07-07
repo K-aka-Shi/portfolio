@@ -1,0 +1,173 @@
+{
+  "spaces": [
+    {
+      "id": "pro",
+      "label": "Pro",
+      "projects": [
+        {
+          "id": "wds-lab",
+          "title": "WDS LAB",
+          "pitch": "Le hub interne des outils et astuces IA de l'équipe.",
+          "status": "operationnel",
+          "problem": "L'équipe avait besoin d'un point central pour ses outils maison, ses ressources IA et des astuces concrètes, sans jargon.",
+          "solution": "Un espace unique qui regroupe les applications sur-mesure, une veille IA hebdomadaire et des guides d'usage.",
+          "impact": "Adopté comme référence interne pour trouver un outil ou une astuce.",
+          "stack": ["Notion"]
+        },
+        {
+          "id": "mond-ai",
+          "title": "Mond'Ai",
+          "pitch": "Une astuce IA par semaine, utile et sans jargon.",
+          "status": "operationnel",
+          "problem": "Beaucoup d'outils IA existent, mais peu de gens savent lesquels utiliser ni les pièges (confidentialité des données, par exemple).",
+          "solution": "Une série de tips hebdomadaires qui présente un outil ou une bonne pratique, avec un angle souveraineté et vie privée.",
+          "impact": "Rendez-vous régulier suivi par l'équipe, qui vulgarise l'IA au quotidien.",
+          "stack": ["Veille", "Rédaction"]
+        },
+        {
+          "id": "wds-qr-track",
+          "title": "WDS QR Track",
+          "pitch": "Générer et suivre des QR codes commerciaux par vendeur.",
+          "status": "operationnel",
+          "problem": "Suivre les visites terrain de façon simple et traçable, sans outil lourd imposé.",
+          "solution": "Une app web qui génère un QR code personnalisé par vendeur et enregistre les scans.",
+          "impact": "Déployé et utilisé en interne, conçu et maintenu en autonomie hors du circuit classique.",
+          "stack": ["Flask", "SQLite", "VPS"]
+        },
+        {
+          "id": "wds-copilote",
+          "title": "WDS Copilote",
+          "pitch": "Un point de contact WhatsApp pour l'équipe.",
+          "status": "dev",
+          "problem": "Offrir un canal conversationnel simple pour les besoins courants, sans app dédiée à installer.",
+          "solution": "Un chatbot WhatsApp connecté à une API backend.",
+          "impact": "Preuve de concept fonctionnelle, base d'un futur assistant plus complet.",
+          "stack": ["FastAPI", "WhatsApp Cloud API"]
+        },
+        {
+          "id": "wds-prepasms",
+          "title": "WDS PrépaSMS",
+          "pitch": "Préparer des SMS clients personnalisés en quelques clics.",
+          "status": "operationnel",
+          "problem": "Envoyer des SMS personnalisés à partir d'un reporting prenait du temps et des manipulations.",
+          "solution": "Un outil qui charge le reporting, filtre les numéros mobiles et aide à rédiger un SMS personnalisé prêt à envoyer.",
+          "impact": "Fait gagner du temps sur une tâche répétitive du quotidien commercial.",
+          "stack": ["Python", "HTML/CSS"]
+        },
+        {
+          "id": "wds-calculcoeff",
+          "title": "WDS CalculCoeff",
+          "pitch": "Un petit calculateur de coefficients.",
+          "status": "operationnel",
+          "problem": "Un calcul récurrent, fait à la main, source d'erreurs et de perte de temps.",
+          "solution": "Un mini-outil web dédié qui automatise le calcul.",
+          "impact": "Calcul fiabilisé et instantané.",
+          "stack": ["HTML/CSS", "JavaScript"]
+        }
+      ]
+    },
+    {
+      "id": "perso",
+      "label": "Perso",
+      "projects": [
+        {
+          "id": "blind-map",
+          "title": "Blind Map",
+          "pitch": "Aider les personnes aveugles à faire leurs courses en autonomie.",
+          "status": "ideation",
+          "problem": "En magasin, les personnes aveugles peinent à se repérer et à faire leurs courses seules ; le GPS classique ne fonctionne pas en intérieur.",
+          "solution": "Une app de navigation vocale en intérieur, pensée pour les grandes surfaces.",
+          "impact": "Projet mené en équipe (Innov'Hand 2026), porté à environ 80 % par moi (interviews, vidéo, montage, pitch), équipe finaliste. Premier vrai pas entrepreneurial.",
+          "stack": ["Recherche utilisateur", "Motion design", "Prototype mobile"]
+        },
+        {
+          "id": "eteint-play",
+          "title": "Eteint Play",
+          "pitch": "Une asso qui organise des tournois de sport.",
+          "status": "dev",
+          "problem": "Créer un évènement fédérateur et bien organisé pour la communauté, au-delà du simple match entre potes.",
+          "solution": "Des tournois de foot récurrents, avec un système interne pour gérer inscriptions et éditions, en cours de structuration en association.",
+          "impact": "Trois ans d'éditions, un réseau large réuni (dont un championnat organisé devant le Parlement européen à Strasbourg).",
+          "stack": ["Organisation", "Web", "Automatisation"]
+        },
+        {
+          "id": "homelab",
+          "title": "Homelab",
+          "pitch": "Mon infrastructure perso, auto-hébergée.",
+          "status": "operationnel",
+          "problem": "Dépendre de services tiers pour héberger ses projets et ses données.",
+          "solution": "Un homelab auto-hébergé (Proxmox, VPS) pour héberger apps, services et expérimentations, en gardant la maîtrise des données.",
+          "impact": "Base fiable pour livrer vite et tester sans contrainte ; culture infra au quotidien.",
+          "stack": ["Proxmox", "VPS OVH", "Docker"]
+        },
+        {
+          "id": "prompt4planning",
+          "title": "Prompt4Planning",
+          "pitch": "Générer des prompts pour créer des emplois du temps.",
+          "status": "operationnel",
+          "problem": "Construire un emploi du temps de profs à la main est long et fastidieux.",
+          "solution": "Un outil qui collecte disponibilités et contraintes, puis génère un prompt structuré prêt pour ChatGPT.",
+          "impact": "Aide concrète pour préparer un emploi du temps rapidement ; prolonge mon goût de la transmission.",
+          "stack": ["Flask", "TinyDB", "HTML/CSS"],
+          "links": [{ "label": "Code", "url": "https://github.com/k-aka-shi/Prompt4Planning" }]
+        },
+        {
+          "id": "mytalib",
+          "title": "MyTalib",
+          "pitch": "Motiver les élèves et suivre leur comportement, en 3 clics.",
+          "status": "dev",
+          "problem": "Dans beaucoup d'établissements, le suivi du comportement des élèves se fait à la main : pas centralisé, difficile à analyser et peu motivant pour les élèves.",
+          "solution": "Une app où les profs attribuent des points (positifs ou négatifs) en quelques secondes, où l'élève voit son score et sa progression en temps réel, et où l'établissement garde une vue d'ensemble. Quatre rôles : admin, vie scolaire, professeur, élève.",
+          "impact": "MVP fonctionnel : attribution d'un point en moins de 5 secondes, accès par rôle, installable comme une app. En phase de validation terrain auprès d'établissements.",
+          "stack": ["VueJS", "PWA", "JWT"]
+        }
+      ]
+    },
+    {
+      "id": "scolaire",
+      "label": "Scolaire",
+      "projects": [
+        {
+          "id": "vision",
+          "title": "Vision",
+          "pitch": "Un ERP pour la gestion d'établissements scolaires.",
+          "status": "archive",
+          "problem": "La gestion administrative et scolaire reposait sur des outils dispersés.",
+          "solution": "Une plateforme web centralisée pour gérer établissements, élèves et administratif, développée pour l'école Vision.",
+          "impact": "Ma première vraie expérience professionnelle, en alternance bachelor : posture et exigences du métier.",
+          "stack": ["JavaScript", "Web"]
+        },
+        {
+          "id": "cesizen",
+          "title": "CESIZen",
+          "pitch": "Une plateforme de gestion du stress et du bien-être.",
+          "status": "archive",
+          "problem": "Proposer des outils simples pour aider à gérer le stress et améliorer le bien-être.",
+          "solution": "Une plateforme web modulaire (exercices, ressources), développée dans le cadre du cursus CESI.",
+          "impact": "Projet mené de la conception au développement.",
+          "stack": ["VueJS"]
+        },
+        {
+          "id": "openeduc",
+          "title": "OpenEduc",
+          "pitch": "Une application conçue pour l'épreuve E5 du BTS SIO.",
+          "status": "archive",
+          "problem": "Concevoir et développer une application complète dans un cadre d'examen (BTS SIO, épreuve E5).",
+          "solution": "Une application web pensée de la conception au développement, documentée pour l'épreuve.",
+          "impact": "Épreuve validée ; socle des bases de conception et de développement.",
+          "stack": ["HTML/CSS", "PHP"]
+        },
+        {
+          "id": "time-eats",
+          "title": "Time'Eats",
+          "pitch": "Un projet piloté en tant que chef de projet.",
+          "status": "dev",
+          "problem": "Coordonner un projet dans un cadre de pilotage (cellule PMO / DSI, CESI MAALSI).",
+          "solution": "Projet mené côté organisation et suivi, en posture de chef de projet.",
+          "impact": "Expérience de coordination et de gestion de projet en équipe.",
+          "stack": ["Gestion de projet"]
+        }
+      ]
+    }
+  ]
+}

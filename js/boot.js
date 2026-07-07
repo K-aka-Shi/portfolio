@@ -9,11 +9,11 @@ import { prefersReduced } from "./motion.js";
 import { isMobile } from "./platform.js";
 
 const LINES_DESKTOP = [
-  "● Initialisation du système…",
-  "● Montage des modules (window manager · dock · bureau)…",
-  "● Bienvenue. Bon voyage d'exploration.",
+  "● Allumage de l'atelier…",
+  "● Mise en route des outils (fenêtres · dock · établi)…",
+  "● Bienvenue. Fais comme chez toi.",
 ];
-const LINES_MOBILE = ["● Démarrage…", "● Bienvenue."];
+const LINES_MOBILE = ["● Allumage de l'atelier…", "● Bienvenue."];
 
 function removeOverlay(overlay) {
   overlay.classList.add("boot--done");

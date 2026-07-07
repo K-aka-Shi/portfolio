@@ -4,7 +4,6 @@
  */
 import { t } from "../i18n.js";
 import { getTheme, setTheme } from "../theme.js";
-import { getLang, setLang } from "../i18n.js";
 import { manualReduce, setReducedMotion } from "../motion.js";
 
 const REPO_URL = "https://github.com/k-aka-shi";
@@ -24,7 +23,6 @@ export function render(container) {
   container.innerHTML = `
     <div class="settings">
       ${toggleRow("set-theme", t("settings.theme"), getTheme() === "dark")}
-      ${toggleRow("set-lang", t("settings.lang"), getLang() === "en")}
       ${toggleRow("set-motion", t("settings.motion"), manualReduce())}
 
       <section class="settings__about">
@@ -36,9 +34,6 @@ export function render(container) {
 
   container.querySelector("#set-theme").addEventListener("change", (e) => {
     setTheme(e.target.checked ? "dark" : "light");
-  });
-  container.querySelector("#set-lang").addEventListener("change", (e) => {
-    setLang(e.target.checked ? "en" : "fr");
   });
   container.querySelector("#set-motion").addEventListener("change", (e) => {
     setReducedMotion(e.target.checked);

@@ -5,12 +5,15 @@
 
 :root {
   /* ----- Tokens partagés (indépendants du thème) ----- */
-  --color-bg: #042f2e; /* wallpaper emerald-950, sombre dans les 2 thèmes */
-  --color-bg-2: #021110;
-  --label-on-wallpaper: #f1f4f3; /* labels d'icônes bureau (toujours sur fond sombre) */
+  /* Atelier de nuit : fond sombre chaud (vert profond tirant vers l'olive). */
+  --color-bg: #12211a; /* nuit d'atelier, chaleureuse */
+  --color-bg-2: #0a120d;
+  --label-on-wallpaper: #f3ede1; /* crème, sur fond sombre dans les 2 thèmes */
 
-  --accent: #059669; /* emerald-600 */
-  --accent-strong: #047857; /* emerald-700 */
+  --accent: #10b981; /* émeraude, couleur identité */
+  --accent-strong: #059669;
+  --accent-warm: #e0995e; /* ambre / terracotta : la chaleur (feu de camp) */
+  --glow-warm: rgba(224, 153, 94, 0.16); /* lueur de lampe d'atelier */
 
   /* Contrôles fenêtre façon macOS */
   --ctl-close: #ff5f57;
@@ -39,14 +42,14 @@
 /* ----- Thème sombre (par défaut) ----- */
 :root,
 [data-theme="dark"] {
-  --surface: rgba(28, 31, 31, 0.82); /* glassmorphism anthracite */
-  --surface-solid: #1c1f1f;
-  --surface-2: #23272a;
-  --border: rgba(255, 255, 255, 0.08);
-  --hover-bg: rgba(255, 255, 255, 0.08);
+  --surface: rgba(34, 31, 25, 0.82); /* verre chaud anthracite */
+  --surface-solid: #1c1a15;
+  --surface-2: #27241d;
+  --border: rgba(255, 240, 220, 0.09);
+  --hover-bg: rgba(255, 240, 220, 0.07);
 
-  --text: #e7eae9;
-  --text-muted: #9aa4a2;
+  --text: #eee7d9; /* crème chaude */
+  --text-muted: #a89f8d;
 
   --shadow-window: 0 18px 50px rgba(0, 0, 0, 0.55);
   --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.4);
@@ -54,17 +57,17 @@
 
 /* ----- Thème clair ----- */
 [data-theme="light"] {
-  --surface: rgba(248, 250, 249, 0.78); /* glassmorphism clair */
-  --surface-solid: #f7f9f8;
-  --surface-2: #eceeed;
-  --border: rgba(0, 0, 0, 0.1);
-  --hover-bg: rgba(0, 0, 0, 0.06);
+  --surface: rgba(250, 247, 240, 0.8); /* verre crème */
+  --surface-solid: #f7f3ea;
+  --surface-2: #efe9db;
+  --border: rgba(60, 50, 30, 0.12);
+  --hover-bg: rgba(80, 60, 20, 0.06);
 
-  --text: #15201d; /* gris très foncé */
-  --text-muted: #5a6360;
+  --text: #201d16; /* brun très foncé, chaud */
+  --text-muted: #5f594b;
 
-  --shadow-window: 0 18px 50px rgba(0, 0, 0, 0.3);
-  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.18);
+  --shadow-window: 0 18px 50px rgba(40, 30, 10, 0.28);
+  --shadow-soft: 0 6px 20px rgba(40, 30, 10, 0.16);
 }
 
 /* ----- Typographie monospace (terminal/code), ligatures désactivées ----- */
